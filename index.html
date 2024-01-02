@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Document</title>
+    <script src="./aframe.min.js"></script>
+    <script src="aframe-extras.min.js"></script>
+    <script src="./moves.js"></script>
+    <script src="./movement.js"></script>
+    <script src="./map.js"></script>
+
+
+
+
+</head>
+
+<body>
+    <a-scene>
+        <a-assets>
+            <a-asset-item id="shark" src="./assets/swiming_shark/scene.gltf"></a-asset-item>
+            <a-asset-item id="basement" src="./assets/pond/basement.glb"></a-asset-item>
+            <a-asset-item id="wall" src="./assets/pond/wall.glb"></a-asset-item>
+            <a-asset-item id="water" src="./assets/pond/water.glb"></a-asset-item>
+        </a-assets>
+        <a-camera position="0 8 0" rotation="0 0 0">
+        </a-camera>
+
+        <a-entity id="Shark" gltf-model="#shark" position="0 0 -20" rotation="0 180 0" scale="0.5 0.5 0.5"
+            animation-mixer="clip:swimming">
+        </a-entity>
+
+        <a-entity movement>
+            <a-entity gltf-model="#basement" position="0 -1 0" rotation="0 0 0" scale="1 1 1">
+                <a-entity gltf-model="#wall" position="0 0 0" rotation="0 0 0"></a-entity>
+                <a-entity gltf-model="#rock" position="0 0 -55" rotation="0 0 0"></a-entity>
+                <a-entity gltf-model="#water" position="0 19 0" rotation="0 0 0"></a-entity>
+            </a-entity>
+        </a-entity>
+
+    </a-scene>
+
+</body>
+
+</html>
